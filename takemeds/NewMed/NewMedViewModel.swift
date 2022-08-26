@@ -19,7 +19,7 @@ final class NewMedViewModel: ObservableObject {
     
     func saveMed() {
         let uuid = UUID().uuidString
-        let med = MedsItemModel(id: uuid, name: name, reminderTime: reminderTime)
+        let med = MedsItemModel(id: uuid, name: name, reminderTime: reminderTime, takenMedsCount: 0)
         do {
             try repository.save(med: med)
         } catch {

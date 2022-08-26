@@ -23,4 +23,13 @@ final class MedsViewModel: ObservableObject {
             print(error)
         }
     }
+    
+    func takeMed(id: String) {
+        do {
+            try repository.takeMed(id: id)
+            load()
+        } catch {
+            print(error)
+        }
+    }
 }

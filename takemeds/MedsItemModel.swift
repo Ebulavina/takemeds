@@ -11,4 +11,5 @@ struct MedsItemModel: Identifiable, Codable {
     let id: String
     let name: String
     let reminderTime: Date
+    var takenMedsCount: Int
 }

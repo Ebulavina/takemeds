@@ -10,6 +10,7 @@ import Foundation
 protocol RepositoryProtocol {
     func save(med: MedsItemModel) throws
     func getMeds() throws -> [MedsItemModel]
+    func takeMed(id: String) throws
 }
 
 enum RepositoryError: Error {
@@ -48,5 +49,19 @@ class Repository: RepositoryProtocol  {
         } else {
             throw RepositoryError.userDefaultsGetMeds 
         }
+    }
+    
+    func takeMed(id: String) throws {
+        var meds = [MedsItemModel]()
+        if let UDMeds = try? getMeds() {
+            meds = UDMeds
+        }
+        if let index = meds.firstIndex(where: { $0.id == id }) {
+            meds[index].takenMedsCount += 1
+        }
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(meds)
+        UserDefaults.standard.set(data, forKey: medsKey)
+        UserDefaults.standard.synchronize()
     }
 }
