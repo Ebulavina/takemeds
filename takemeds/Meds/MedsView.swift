@@ -20,10 +20,12 @@ struct MedsView: View {
                 }
                 .listStyle(.plain)
                 
+                Divider()
+                
                 NavigationLink {
                     NewMedView()
                 } label: {
-                    Text("add")
+                    Label("add", systemImage: "plus")
                 }
 
             }
@@ -61,9 +63,10 @@ struct MedsView: View {
                     Text("take med")
                     Spacer()
                 }
+                .frame(height: Constants.height)
             }
-            .padding()
-            .border(.secondary, width: Constants.borderWidth)
+            .buttonStyle(.bordered)
+            .foregroundColor(.primary)
         }
         .padding([.top, .bottom], Constants.padding)
     }
@@ -84,7 +87,7 @@ struct MedsView: View {
     
     struct Constants {
         static let padding: CGFloat = 5
-        static let borderWidth: CGFloat = 1
+        static let height: CGFloat = 40
     }
 }
 
