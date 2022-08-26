@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct MedsView: View {
-    @ObservedObject var viewModel = MedsViewModel(repository: Repository())
-    
+    @ObservedObject var viewModel = MedsViewModel(repository: Dependency.shared.repository)
+        
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     ForEach(viewModel.meds) { med in
                         Text(med.name)
+                        
+                        Text(dateToString(med.reminderTime))
                     }
                 }
                 .listStyle(.plain)
@@ -36,6 +38,12 @@ struct MedsView: View {
             }
         }
     }
+}
+
+func dateToString(_ date: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    return dateFormatter.string(from: date)
 }
 
 struct ContentView_Previews: PreviewProvider {

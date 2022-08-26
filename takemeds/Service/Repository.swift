@@ -18,6 +18,13 @@ enum RepositoryError: Error {
 
 class Repository: RepositoryProtocol  {
     private let medsKey = "meds_key"
+    private let reminderKey = "reminder_key"
+    
+    private let reminder: ReminderProtocol
+    
+    init(reminder: ReminderProtocol) {
+        self.reminder = reminder
+    }
     
     func save(med: MedsItemModel) throws {
         var meds = [MedsItemModel]()
@@ -30,6 +37,7 @@ class Repository: RepositoryProtocol  {
         let data = try encoder.encode(meds)
         UserDefaults.standard.set(data, forKey: medsKey)
         UserDefaults.standard.synchronize()
+        reminder.createRemind(med: med)
     }
     
     func getMeds() throws -> [MedsItemModel] {

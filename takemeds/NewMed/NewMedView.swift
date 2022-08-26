@@ -9,17 +9,25 @@ import SwiftUI
 
 struct NewMedView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @StateObject var viewModel = NewMedViewModel(repository: Repository())
-    
+    @StateObject var viewModel = NewMedViewModel(repository: Dependency.shared.repository)
+        
     var body: some View {
-        VStack {
-            TextField("title", text: $viewModel.title)
+        Form {
+            TextField("title", text: $viewModel.name)
+            
+            DatePicker(
+                "Reminder time:",
+                selection: $viewModel.reminderTime,
+                displayedComponents: .hourAndMinute
+            )
+            
             Button("add") {
                 viewModel.saveMed()
                 self.presentationMode.wrappedValue.dismiss()
             }
-            .disabled(viewModel.title.isEmpty)
+            .disabled(viewModel.name.isEmpty)
         }
+        .navigationTitle(Text("Create med"))
     }
 }
 

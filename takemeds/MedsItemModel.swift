@@ -10,4 +10,5 @@ import Foundation
 struct MedsItemModel: Identifiable, Codable {
     let id: String
     let name: String
+    let reminderTime: Date
 }

@@ -8,7 +8,8 @@
 import Foundation
 
 final class NewMedViewModel: ObservableObject {
-    @Published var title: String = ""
+    @Published var name: String = ""
+    @Published var reminderTime = Date()
     
     let repository: RepositoryProtocol
     
@@ -18,7 +19,7 @@ final class NewMedViewModel: ObservableObject {
     
     func saveMed() {
         let uuid = UUID().uuidString
-        let med = MedsItemModel(id: uuid, name: title)
+        let med = MedsItemModel(id: uuid, name: name, reminderTime: reminderTime)
         do {
             try repository.save(med: med)
         } catch {
