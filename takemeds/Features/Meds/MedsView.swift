@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MedsView: View {
-    @ObservedObject var viewModel = MedsViewModel(repository: Dependency.shared.repository)
+    @ObservedObject private var viewModel = MedsViewModel(repository: Dependency.shared.repository)
         
     var body: some View {
         NavigationView {
@@ -39,7 +39,7 @@ struct MedsView: View {
         }
     }
     
-    func makeListItemView(med: MedsItemModel) -> some View {
+    private func makeListItemView(med: MedsItemModel) -> some View {
         return VStack(alignment: .leading) {
             Text(med.name)
                 .font(.title)
@@ -71,7 +71,7 @@ struct MedsView: View {
         .padding([.top, .bottom], Constants.padding)
     }
     
-    struct ItemRowView: View {
+    private struct ItemRowView: View {
         let label: String
         let icon: String
         let value: String
@@ -85,7 +85,7 @@ struct MedsView: View {
         }
     }
     
-    struct Constants {
+    private struct Constants {
         static let padding: CGFloat = 5
         static let height: CGFloat = 40
     }

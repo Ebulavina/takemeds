@@ -10,7 +10,7 @@ import Foundation
 final class MedsViewModel: ObservableObject {
     @Published var meds: [MedsItemModel] = []
     
-    let repository: RepositoryProtocol
+    private let repository: RepositoryProtocol
     
     init(repository: RepositoryProtocol) {
         self.repository = repository

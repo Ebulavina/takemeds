@@ -11,7 +11,7 @@ final class NewMedViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var reminderTime = Date()
     
-    let repository: RepositoryProtocol
+    private let repository: RepositoryProtocol
     
     init(repository: RepositoryProtocol) {
         self.repository = repository

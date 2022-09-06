@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct NewMedView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @StateObject var viewModel = NewMedViewModel(repository: Dependency.shared.repository)
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
+    @StateObject private var viewModel = NewMedViewModel(repository: Dependency.shared.repository)
         
     var body: some View {
         Form {

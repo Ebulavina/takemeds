@@ -12,7 +12,7 @@ protocol ReminderProtocol {
     func createRemind(med: MedsItemModel)
 }
 
-class Reminder: ReminderProtocol {
+final class Reminder: ReminderProtocol {
     func createRemind(med: MedsItemModel) {
         UNUserNotificationCenter.current().requestAuthorization(
             options: [.alert, .sound, .badge], completionHandler: { _, _ in }

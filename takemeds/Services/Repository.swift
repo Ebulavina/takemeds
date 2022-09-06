@@ -17,7 +17,7 @@ enum RepositoryError: Error {
     case userDefaultsGetMeds
 }
 
-class Repository: RepositoryProtocol  {
+final class Repository: RepositoryProtocol  {
     private let medsKey = "meds_key"
     private let reminderKey = "reminder_key"
     

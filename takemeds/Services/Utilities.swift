@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Utilities {
+final class Utilities {
     static func dateToString(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
