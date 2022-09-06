@@ -13,21 +13,21 @@ struct NewMedView: View {
         
     var body: some View {
         Form {
-            TextField("title", text: $viewModel.name)
+            TextField("NewMedView.title".localizedString, text: $viewModel.name)
             
             DatePicker(
-                "Reminder time:",
+                "NewMedView.Reminder_time:".localizedString,
                 selection: $viewModel.reminderTime,
                 displayedComponents: .hourAndMinute
             )
             
-            Button("add") {
+            Button("Button.add".localizedString) {
                 viewModel.saveMed()
                 self.presentationMode.wrappedValue.dismiss()
             }
             .disabled(viewModel.name.isEmpty)
         }
-        .navigationTitle(Text("Create med"))
+        .navigationTitle(Text("NewMedView.Create_med".localizedString))
     }
 }
 

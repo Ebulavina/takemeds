@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  takemeds
+
+  Created by Ekaterina Bulavina on 06.09.2022.
+  
+*/
+
+"NewMedView.title" = "title";
+"NewMedView.Reminder_time:" = "Reminder time:";
+"NewMedView.Create_med" = "Create med";
+
+"Button.add" = "add";
+
+"MedsView.My_meds" = "My meds";
+"MedsView.Reminder_time:" = "Reminder time:";
+"MedsView.Taken_meds_count:" = "Taken meds count:";
+"MedsView.take_med" = "take med";
+

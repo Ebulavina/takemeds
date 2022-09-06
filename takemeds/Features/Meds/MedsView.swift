@@ -25,11 +25,11 @@ struct MedsView: View {
                 NavigationLink {
                     NewMedView()
                 } label: {
-                    Label("add", systemImage: "plus")
+                    Label("Button.add".localizedString, systemImage: "plus")
                 }
 
             }
-            .navigationTitle(Text("My meds"))
+            .navigationTitle(Text("MedsView.My_meds".localizedString))
             .onAppear {
                 viewModel.load()
             }
@@ -46,13 +46,13 @@ struct MedsView: View {
                 .padding(.bottom, Constants.padding)
             
             ItemRowView(
-                label: "Reminder time:",
+                label: "MedsView.Reminder_time:".localizedString,
                 icon: "clock",
                 value: Utilities.dateToString(med.reminderTime)
             )
             
             ItemRowView(
-                label: "Taken meds count:",
+                label: "MedsView.Taken_meds_count:".localizedString,
                 icon: "pills",
                 value: String(med.takenMedsCount)
             )
@@ -60,7 +60,7 @@ struct MedsView: View {
             Button(action: { viewModel.takeMed(id: med.id) }) {
                 HStack {
                     Spacer()
-                    Text("take med")
+                    Text("MedsView.take_med".localizedString)
                     Spacer()
                 }
                 .frame(height: Constants.height)

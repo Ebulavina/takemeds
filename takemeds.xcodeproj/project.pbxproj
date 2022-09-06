@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71828D8A28C760E300C92E57 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71828D8928C760E300C92E57 /* Extensions.swift */; };
+		71828D8B28C7617E00C92E57 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71828D8D28C7617E00C92E57 /* Localizable.strings */; };
 		71986DE528B788F700B39C4C /* takemedsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71986DE428B788F700B39C4C /* takemedsApp.swift */; };
 		71986DE728B788F700B39C4C /* MedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71986DE628B788F700B39C4C /* MedsView.swift */; };
 		71986DE928B788FA00B39C4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71986DE828B788FA00B39C4C /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71828D8928C760E300C92E57 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		71828D8C28C7617E00C92E57 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		71986DE128B788F700B39C4C /* takemeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = takemeds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71986DE428B788F700B39C4C /* takemedsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takemedsApp.swift; sourceTree = "<group>"; };
 		71986DE628B788F700B39C4C /* MedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsView.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 				71986E0028B8BEDC00B39C4C /* Services */,
 				71986DE428B788F700B39C4C /* takemedsApp.swift */,
 				71986DE828B788FA00B39C4C /* Assets.xcassets */,
+				71828D8D28C7617E00C92E57 /* Localizable.strings */,
 				71986DEA28B788FA00B39C4C /* Preview Content */,
 			);
 			path = takemeds;
@@ -90,6 +95,7 @@
 			children = (
 				71986E0128B8C10A00B39C4C /* Dependency.swift */,
 				71986E0528B8D01F00B39C4C /* Utilities.swift */,
+				71828D8928C760E300C92E57 /* Extensions.swift */,
 				71986DFC28B79C6F00B39C4C /* Repository.swift */,
 				71986DFE28B8BDC400B39C4C /* Reminder.swift */,
 			);
@@ -190,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71986DEC28B788FA00B39C4C /* Preview Assets.xcassets in Resources */,
+				71828D8B28C7617E00C92E57 /* Localizable.strings in Resources */,
 				71986DE928B788FA00B39C4C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,11 +217,23 @@
 				71986DE528B788F700B39C4C /* takemedsApp.swift in Sources */,
 				71986DFB28B79AC000B39C4C /* NewMedViewModel.swift in Sources */,
 				71986E0628B8D01F00B39C4C /* Utilities.swift in Sources */,
+				71828D8A28C760E300C92E57 /* Extensions.swift in Sources */,
 				71986DF528B7932E00B39C4C /* MedsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		71828D8D28C7617E00C92E57 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71828D8C28C7617E00C92E57 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		71986DED28B788FA00B39C4C /* Debug */ = {
